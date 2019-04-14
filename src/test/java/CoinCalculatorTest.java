@@ -3,9 +3,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * User: mpmenne
- * Date: 6/18/14
- * Time: 3:28 AM
+ * User: dceu
+ * Date: 4/13/2019
+ * Time: 22:58
  */
 public class CoinCalculatorTest {
 
@@ -15,7 +15,7 @@ public class CoinCalculatorTest {
 
         String coinMessage = coinCalculator.calculateChange("$3.00");
 
-        assertEquals("No coins returned", coinMessage);
+        assertEquals("[3, 0, 0, 0, 0]" , coinMessage);
     }
 
     @Test
@@ -24,7 +24,7 @@ public class CoinCalculatorTest {
 
         String coinMessage = coinCalculator.calculateChange("$0.01");
 
-        assertEquals("1 penny", coinMessage);
+        assertEquals("[0, 0, 0, 0, 1]", coinMessage);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class CoinCalculatorTest {
 
         String coinMessage = coinCalculator.calculateChange("$0.10");
 
-        assertEquals("1 dime", coinMessage);
+        assertEquals("[0, 0, 1, 0, 0]", coinMessage);
     }
 
 }
